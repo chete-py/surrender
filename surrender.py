@@ -9,7 +9,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 # title of the app
 st.title("Secondary Market For Life Insurance")
 
-st.sidebar.image('favicon.PNG', use_column_width=True)
+st.sidebar.image('favicon.png', use_column_width=True)
 st.sidebar.subheader("Trading Life Insurance Contracts")
 
 # Main Streamlit app code
