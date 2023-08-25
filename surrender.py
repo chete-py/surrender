@@ -27,7 +27,7 @@ def main():
         # Create form widgets to capture user inputs
         name = st.text_input("Name:")
         age = st.number_input("Age:")
-        mode_of_payment = st.selectbox("Mode of Payment:", ["Monthly", "Quarterly", "Semi-Annually", "Annually"])
+        mode_of_payment = st.selectbox("Mode of Payment:", ["Monthly", "Quarterly", "Semi-Annually", "Annually", "Lumpsome"])
         term_of_settlement = st.selectbox("Desired Number Of Installments Payable (months):",["Below 36", "36 - 48 months", "48 - 60 months", "Over 60 months"])
         
         # Create a button to submit the form
