@@ -46,7 +46,7 @@ def main():
         st.write("Please provide the following information:")
         
         # Create form widgets to capture user inputs
-        name = st.selectbox("Name Of Insurance Company:", ["Corporate Insurance", "CIC Insurance", "Heritage Insurance", "ICEA Lion", "Jubilee Insurance", "Old Mutual"])
+        name = st.selectbox("Name Of Insurance Company:", ["ABSA Life", "APA Life", "Britam Life", "Corporate Insurance", "CIC Life", "GA Life", "Geminia Life", "ICEA Lion", "Jubilee Insurance", "Liberty Life", "Madison Insurance", "Old Mutual", "Prudential Life", "Sanalam Life"])
         policy = st.selectbox("Policy Type:", ["Investment Linked Policy", "Life Insurance Policy"])
         policy_term = st.number_input("Policy Term Of the Policy:")
         premium_term = st.number_input("Premium Term Of the Policy:")
