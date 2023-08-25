@@ -28,7 +28,7 @@ def main():
         name = st.text_input("Name:")
         age = st.number_input("Age:")
         mode_of_payment = st.selectbox("Mode of Payment:", ["Monthly", "Quarterly", "Semi-Annually", "Annually"])
-        term_of_settlement = st.number_input("Term of Settlement (years):")
+        term_of_settlement = st.number_input("Desired Installment Payments (months):")
         
         # Create a button to submit the form
         if st.button("Submit"):
