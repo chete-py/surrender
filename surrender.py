@@ -69,9 +69,9 @@ def main():
             min_units_payable, max_units_payable = term_limits.get(term_of_settlement, (0, float('inf')))
             
             # Filter policies based on investor's inputs
-            filtered_df = df[
-                (df["Units Payable"] >= min_units_payable) & 
-                (df["Units Payable"] <= max_units_payable)
+            filtered_df = df2[
+                (df2["Units Payable"] >= min_units_payable) & 
+                (df2["Units Payable"] <= max_units_payable)
             ]
         
             # Display the filtered policies
