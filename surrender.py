@@ -16,7 +16,7 @@ st.sidebar.subheader("Trading Life Insurance Contracts")
 # Function to add a new entry to the CSV file
 def add_entry_to_csv(data):
     # Load existing CSV data
-    df = pd.read_csv("expenses.csv")
+    df = pd.read_csv("surrender.csv")
 
     # Append new data to the DataFrame
     new_entry = pd.DataFrame([data])
