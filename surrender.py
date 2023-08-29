@@ -56,10 +56,10 @@ def main():
                  df = pd.read_csv("surrender.csv")
 
         # Filter policies based on investor's inputs
-        filtered_df = df[
-            (df["Units Payable"] >= min_units_payable) & 
-            (df["Units Payable"] <= max_units_payable) &
-            (df["Term of Settlement"] == term_of_settlement)
+        filtered_df = newdf[
+            (newdf["Units Payable"] >= min_units_payable) & 
+            (newdf["Units Payable"] <= max_units_payable) &
+            (newdf["Term of Settlement"] == term_of_settlement)
         ]
 
         # Display the filtered policies
