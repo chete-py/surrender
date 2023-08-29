@@ -23,7 +23,7 @@ def add_entry_to_csv(data):
     newdf = pd.concat([df, new_entry], ignore_index=True)
 
     # Save the updated DataFrame back to the CSV file
-    newdf.to_csv("expenses.csv", index=False)
+    newdf.to_csv("surrender.csv", index=False)
 
 
     newdf = newdf.to_html(index=False)
@@ -89,6 +89,24 @@ def main():
             # Process and display user inputs
             add_entry_to_csv(new_entry_data)
             st.success("New Policy added successfully!")
+
+    elif view == "Records":
+        # Show the saved DataFrame here
+        st.subheader("RECORDS") 
+        lastdf = pd.read_csv("surrender.csv")
+
+        lastdf = lastdf.to_html(index=False)
+        last_df = lastdf.replace('<table', '<table style="font-size: 12px;"')
+
+        # Convert the data frame to Markdown table format
+        # markdown_table = lastdf.to_markdown(index=False)
+
+        # Display the Markdown-formatted table using st.markdown()
+        # st.markdown(markdown_table, unsafe_allow_html=True)
+        #st.table(lastdf)
+
+        st.markdown(last_df, unsafe_allow_html=True)
+        
            
     
 
