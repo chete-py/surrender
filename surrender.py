@@ -92,6 +92,7 @@ def main():
         new_entry_data = {}
         new_entry_data ["Underwriter"] = st.selectbox("Name Of Insurance Company:", ["ABSA Life", "APA Life", "Britam Life", "Corporate Insurance", "CIC Life", "GA Life", "Geminia Life", "ICEA Lion", "Jubilee Insurance", "Liberty Life", "Madison Insurance", "Old Mutual", "Prudential Life", "Sanalam Life"])
         new_entry_data ["Policy Type"] = st.selectbox("Policy Type:", ["Investment Linked Policy", "Life Insurance Policy"])
+        new_entry_data ["Policy Number"] = st.number_input("Policy Number:")
         new_entry_data ["Start Date"] = st.date_input("Start Date")
         new_entry_data ["Maturity Date"] = st.date_input("Maturity Date")
         new_entry_data ["Surrender Date"] = st.date_input("Surrender Date")
@@ -127,8 +128,7 @@ def main():
         # st.markdown(markdown_table, unsafe_allow_html=True)
         #st.table(lastdf)
 
-        st.markdown(last_df, unsafe_allow_html=True)
-        
+        st.markdown(last_df, unsafe_allow_html=True)       
            
     
 
