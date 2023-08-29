@@ -48,15 +48,20 @@ def main():
         
         # Create form widgets to capture user inputs
         new_entry_data = {}
-        new_entry_data ["name"] = st.selectbox("Name Of Insurance Company:", ["ABSA Life", "APA Life", "Britam Life", "Corporate Insurance", "CIC Life", "GA Life", "Geminia Life", "ICEA Lion", "Jubilee Insurance", "Liberty Life", "Madison Insurance", "Old Mutual", "Prudential Life", "Sanalam Life"])
-        new_entry_data ["policy"] = st.selectbox("Policy Type:", ["Investment Linked Policy", "Life Insurance Policy"])
-        new_entry_data ["start_date"] = st.date_input("Start Date")
-        new_entry_data ["maturity_date"] = st.date_input("Maturity Date")
-        new_entry_data ["surrender_date"] = st.date_input("Surrender Date")
-        new_entry_data ["policy_term"] = st.number_input("Policy Term Of the Policy:")
-        new_entry_data ["premium_term"] = st.number_input("Premium Term Of the Policy:")
-        new_entry_data ["units_paid"] = st.text_input("Number of units paid:")
-        new_entry_data ["units_outstanding"] = st.text_input("Number of units outstanding:")        
+        new_entry_data ["Underwriter"] = st.selectbox("Name Of Insurance Company:", ["ABSA Life", "APA Life", "Britam Life", "Corporate Insurance", "CIC Life", "GA Life", "Geminia Life", "ICEA Lion", "Jubilee Insurance", "Liberty Life", "Madison Insurance", "Old Mutual", "Prudential Life", "Sanalam Life"])
+        new_entry_data ["Policy Type"] = st.selectbox("Policy Type:", ["Investment Linked Policy", "Life Insurance Policy"])
+        new_entry_data ["Start Date"] = st.date_input("Start Date")
+        new_entry_data ["Maturity Date"] = st.date_input("Maturity Date")
+        new_entry_data ["Surrender Date"] = st.date_input("Surrender Date")
+        new_entry_data ["Units Paid"] = st.number_input("Number of units paid:")
+        new_entry_data ["Units Payable"] = st.number_input("Number of units payable:") 
+        new_entry_data ["Total Premium Received"] = st.number_input("Total Premium Received")
+        new_entry_data ["Insurance Surrender Amount"] = st.number_input("Insurance Surrender Amount")
+        new_entry_data ["Initial Lumpsome Amount"] = st.number_input("Investor Lumpsome Payment to Policy Holder")
+        new_entry_data ["Total Investment Amount"] = st.number_input("Total Projected Investment Amount")
+        new_entry_data ["Return on Investment"] = st.number_input("Return on Investment")
+        
+        
          
         
         # Create a button to submit the form
