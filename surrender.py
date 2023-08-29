@@ -47,27 +47,23 @@ def main():
         st.write("Please provide the following information:")
         
         # Create form widgets to capture user inputs
-        name = st.selectbox("Name Of Insurance Company:", ["ABSA Life", "APA Life", "Britam Life", "Corporate Insurance", "CIC Life", "GA Life", "Geminia Life", "ICEA Lion", "Jubilee Insurance", "Liberty Life", "Madison Insurance", "Old Mutual", "Prudential Life", "Sanalam Life"])
-        policy = st.selectbox("Policy Type:", ["Investment Linked Policy", "Life Insurance Policy"])
-        start_date = st.date_input("Start Date")
-        maturity_date = st.date_input("Maturity Date")
-        surrender_date = st.date_input("Surrender Date")
-        policy_term = st.number_input("Policy Term Of the Policy:")
-        premium_term = st.number_input("Premium Term Of the Policy:")
-        units_paid = st.text_input("Number of units paid:")
-        units_outstanding = st.text_input("Number of units outstanding:")        
+        new_entry_data = {}
+        new_entry_data ["name"] = st.selectbox("Name Of Insurance Company:", ["ABSA Life", "APA Life", "Britam Life", "Corporate Insurance", "CIC Life", "GA Life", "Geminia Life", "ICEA Lion", "Jubilee Insurance", "Liberty Life", "Madison Insurance", "Old Mutual", "Prudential Life", "Sanalam Life"])
+        new_entry_data ["policy"] = st.selectbox("Policy Type:", ["Investment Linked Policy", "Life Insurance Policy"])
+        new_entry_data ["start_date"] = st.date_input("Start Date")
+        new_entry_data ["maturity_date"] = st.date_input("Maturity Date")
+        new_entry_data ["surrender_date"] = st.date_input("Surrender Date")
+        new_entry_data ["policy_term"] = st.number_input("Policy Term Of the Policy:")
+        new_entry_data ["premium_term"] = st.number_input("Premium Term Of the Policy:")
+        new_entry_data ["units_paid"] = st.text_input("Number of units paid:")
+        new_entry_data ["units_outstanding"] = st.text_input("Number of units outstanding:")        
          
         
         # Create a button to submit the form
         if st.button("Submit"):
             # Process and display user inputs
-            st.write("Submitted Information:")
-            st.write(f"Name: {name}")
-            st.write(f"Policy: {policy}")
-            st.write(f"Policy: {policy_term}")
-            st.write(f"Policy: {premium_term}")
-            st.write(f"Total Units Paid: {units_paid}")
-            st.write(f"Total Units Outstanding: {units_outstanding}")
+            add_entry_to_csv(new_entry_data)
+            st.success("New Policy added successfully!")
            
     
 
