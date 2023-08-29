@@ -44,32 +44,44 @@ def main():
         st.subheader("Buy Surrender from Secondary Market")
 
         st.write("Please provide the following information:")
+
+        term_limits = {
+        "Below 36": (0, 36),
+        "36 - 48 months": (36, 48),
+        "48 - 60 months": (48, 60),
+        "Over 60 months": (60, float('inf')) 
+            # Use a large value for "Over 60 months"
+        }
         
         # Create form widgets to capture user inputs
         name = st.text_input("Name:")
         age = st.number_input("Age:")
         mode_of_payment = st.selectbox("Mode of Payment:", ["Monthly", "Quarterly", "Semi-Annually", "Annually", "Lumpsome"])
-        term_of_settlement = st.selectbox("Desired Number Of Installments Payable (months):",["Below 36", "36 - 48 months", "48 - 60 months", "Over 60 months"])
+        term_of_settlement = st.selectbox("Desired Number Of Installments Payable (months):", list(term_limits.keys()))
+
         
         # Create a button to submit the form
         if st.button("Submit"):
             
             df2 = pd.read_csv("surrender.csv")
 
-                # Filter policies based on investor's inputs
-            filtered_df = df2[
-                (df2["Units Payable"] >= min_units_payable) & 
-                (df2["Units Payable"] <= max_units_payable) &
-                (df2["Term of Settlement"] == term_of_settlement)
-                ]
+            # Get limits based on selected term of settlement
+            min_units_payable, max_units_payable = term_limits.get(term_of_settlement, (0, float('inf')))
+            
+            # Filter policies based on investor's inputs
+            filtered_df = df[
+                (df["Units Payable"] >= min_units_payable) & 
+                (df["Units Payable"] <= max_units_payable)
+            ]
         
-                # Display the filtered policies
+            # Display the filtered policies
             if not filtered_df.empty:
                 st.write("Available Policies:")
                 st.dataframe(filtered_df)
             else:
                 st.write("No policies found matching your criteria.")
 
+               
     elif view == "Underwriter":
         # Add the dashboard elements here
         st.subheader("Sell Surrender To Secondary Market")
