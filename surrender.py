@@ -49,9 +49,9 @@ def main():
         # Create form widgets to capture user inputs
         name = st.selectbox("Name Of Insurance Company:", ["ABSA Life", "APA Life", "Britam Life", "Corporate Insurance", "CIC Life", "GA Life", "Geminia Life", "ICEA Lion", "Jubilee Insurance", "Liberty Life", "Madison Insurance", "Old Mutual", "Prudential Life", "Sanalam Life"])
         policy = st.selectbox("Policy Type:", ["Investment Linked Policy", "Life Insurance Policy"])
-        start date = st.date_input("Start Date")
-        maturity date = st.date_input("Maturity Date")
-        surrender date = st.date_input("Surrender Date")
+        start_date = st.date_input("Start Date")
+        maturity_date = st.date_input("Maturity Date")
+        surrender_date = st.date_input("Surrender Date")
         policy_term = st.number_input("Policy Term Of the Policy:")
         premium_term = st.number_input("Premium Term Of the Policy:")
         units_paid = st.text_input("Number of units paid:")
