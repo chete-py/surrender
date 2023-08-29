@@ -79,7 +79,7 @@ def main():
         new_entry_data ["Insurance Surrender Amount"] = st.number_input("Insurance Surrender Amount")
         new_entry_data ["Initial Lumpsome Amount"] = st.number_input("Investor Lumpsome Payment to Policy Holder")
         new_entry_data ["Total Investment Amount"] = st.number_input("Total Projected Investment Amount")
-        new_entry_data ["Return on Investment"] = st.number_input("Return on Investment")
+        new_entry_data ["Return On Investment"] = st.number_input("Return on Investment")
         
         
          
