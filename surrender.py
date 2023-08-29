@@ -53,12 +53,21 @@ def main():
         
         # Create a button to submit the form
         if st.button("Submit"):
-            # Process and display user inputs
-            st.write("Submitted Information:")
-            st.write(f"Name: {name}")
-            st.write(f"Age: {age}")
-            st.write(f"Mode of Payment: {mode_of_payment}")
-            st.write(f"Term of Settlement: {term_of_settlement} years")
+                 df = pd.read_csv("surrender.csv")
+
+        # Filter policies based on investor's inputs
+        filtered_df = df[
+            (df["Units Payable"] >= min_units_payable) & 
+            (df["Units Payable"] <= max_units_payable) &
+            (df["Term of Settlement"] == term_of_settlement)
+        ]
+
+        # Display the filtered policies
+        if not filtered_df.empty:
+            st.write("Available Policies:")
+            st.dataframe(filtered_df)
+        else:
+            st.write("No policies found matching your criteria.")
 
     elif view == "Underwriter":
         # Add the dashboard elements here
