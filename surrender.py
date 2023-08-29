@@ -13,6 +13,26 @@ st.title("Secondary Market For Life Insurance")
 st.sidebar.image('favicon.png', use_column_width=True)
 st.sidebar.subheader("Trading Life Insurance Contracts")
 
+# Function to add a new entry to the CSV file
+def add_entry_to_csv(data):
+    # Load existing CSV data
+    df = pd.read_csv("expenses.csv")
+
+    # Append new data to the DataFrame
+    new_entry = pd.DataFrame([data])
+    newdf = pd.concat([df, new_entry], ignore_index=True)
+
+    # Save the updated DataFrame back to the CSV file
+    newdf.to_csv("expenses.csv", index=False)
+
+
+    newdf = newdf.to_html(index=False)
+    # Add inline CSS to change font size
+    newdf = newdf.replace('<table', '<table style="font-size: 11px;"')       
+
+    st.markdown(newdf, unsafe_allow_html=True)
+
+
 # Main Streamlit app code
 def main(): 
 
