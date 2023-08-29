@@ -38,7 +38,7 @@ def main():
 
 
     # Create a sidebar to switch between views
-    view = st.sidebar.radio("Welcome, are you an investor or underwriter?", ["Investor", "Underwriter"])
+    view = st.sidebar.radio("Welcome, are you an investor or underwriter?", ["Investor", "Underwriter", "View Records"])
 
     if view == "Investor":
         st.subheader("Buy Surrender from Secondary Market")
@@ -90,7 +90,7 @@ def main():
             add_entry_to_csv(new_entry_data)
             st.success("New Policy added successfully!")
 
-    elif view == "Records":
+    elif view == "View Records":
         # Show the saved DataFrame here
         st.subheader("RECORDS") 
         lastdf = pd.read_csv("surrender.csv")
